@@ -1,0 +1,9 @@
+.navbar{
+    width: 100%;
+    padding-top: 10px;
+}
+
+.navbar-title{
+    color: #202021;
+    font-size: 64px;
+}

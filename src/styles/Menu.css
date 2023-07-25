@@ -1,0 +1,39 @@
+.menu{
+    margin-bottom: 70px;
+}
+
+.menu-sup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.menu-sup-title{
+    font-weight: normal;
+}
+
+.menu-sup-search{
+    width: 50%;
+    height: 5vh;
+    border-radius: 20px;
+    border: 1.5px solid grey;
+    padding-left: 15px;
+}
+
+.menu-sup-search:hover{
+    border-color: black;
+}
+
+.menu-sup-bottom-add{
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: #6262B4;
+    color: white;
+}
+
+.menu-sup-bottom-add:hover{
+    background-color: #6262B4;
+}
+
+
