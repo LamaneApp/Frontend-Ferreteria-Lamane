@@ -9,9 +9,8 @@ const Menu = () => {
     return (
         <div className="menu">
             <div className="menu-sup">
-                <h1 className="menu-sup-title">Productos</h1>
                 <input className="menu-sup-search" placeholder='Buscar producto..'></input>
-                <Button className="menu-sup-bottom-add" startIcon={<AddIcon/>}>
+                <Button style={{color: '#2C3E50'}} startIcon={<AddIcon/>}>
                     AGREGAR
                 </Button>
             </div>
