@@ -11,6 +11,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import IconButton from '@mui/material/IconButton';
 import Pagination from '@mui/material/Pagination';
+import EditProduct from './EditProduct';
+import ViewProduct from './ViewProduct';
 
 // Array de datos
 const rows = [
@@ -27,7 +29,17 @@ const rows = [
 const itemsPerPage = 5; // Cantidad de elementos por página
 
 export default function BasicTable() {
-  const [page, setPage] = React.useState(1);
+  const [page, setPage] = useState(1);
+  const [edit, setEdit] = useState(null);
+  const [view, setView] = useState(null);
+
+  const handleShowViewProduct = (index) => {
+    setView(index == view ? null : index);
+  }
+
+  const handleShowEditProduct = (index) => {
+    setEdit(index == edit ? null : index);
+  }
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -61,12 +73,14 @@ export default function BasicTable() {
                 <TableCell>{row[4]}</TableCell>
                 <TableCell style={{ paddingRight: '10px' }}>
                   <div style={{ display: 'flex', gap: '8px' }}>
-                    <Button variant="contained" size="small" style={{ backgroundColor: '#2C3E50' }}>
+                    <Button variant="contained" size="small" style={{ backgroundColor: '#2C3E50' }} onClick={() => handleShowViewProduct(index)}>
                       VER
                     </Button>
-                    <IconButton aria-label="delete" size="small">
+                    {view == index && <ViewProduct handleShowViewProduct={handleShowViewProduct}/>}
+                    <IconButton aria-label="delete" size="small" onClick={() =>handleShowEditProduct(index)}>
                       <EditIcon fontSize="inherit" />
                     </IconButton>
+                    {edit == index && <EditProduct handleShowEditProduct={handleShowEditProduct}/>}
                     <IconButton aria-label="delete" size="small" color="error">
                       <DeleteIcon fontSize="inherit" />
                     </IconButton>
